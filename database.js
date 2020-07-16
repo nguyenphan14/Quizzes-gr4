@@ -33,14 +33,34 @@ let quizzData = [
         name: 'Computer',
         quizzes: [
             {
-                question: "String",
+                question: "Let's start with an easy one. What does CPU stand for?",
                 answer: [
-                    "string",
-                    "string",
-                    "string",
-                    "string"
+                    "Computer Processing Unit",
+                    "Central Peripheral Unit",
+                    "Central Processing Unit",
+                    "Computer Processing User"
                 ],
-                trueAnswer: "string"
+                trueAnswer: "Central Processing Unit"
+            },
+            {
+                question: "Who invented the Graphical User Interface (GUI)?",
+                answer: [
+                    "Apple",
+                    "Bell Labs",
+                    "Xerox",
+                    "Microsoft"
+                ],
+                trueAnswer: "Xerox"
+            },
+            {
+                question: "Who invented the Graphical User Interface (GUI)?",
+                answer: [
+                    "Apple",
+                    "Bell Labs",
+                    "Xerox",
+                    "Microsoft"
+                ],
+                trueAnswer: "Xerox"
             }
         ]
     }
