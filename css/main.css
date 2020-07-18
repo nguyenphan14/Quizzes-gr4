@@ -1,6 +1,6 @@
 body {
     width: 100%;
-    background-color: #676767;
+    
     margin: 0;
 }
 
@@ -9,7 +9,8 @@ body {
 }
 
 #game {
-    
+    display: none;
+    background-color: #676767;
 }
 
 #game_navbar {
@@ -86,3 +87,48 @@ body {
     background-color: white    ;
     margin: 4rem auto;
 }
+
+/* LOGIN CSS */
+
+#login {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    background: url(/assets/imgs/login-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.login_form {
+    background-color: white;
+    max-width: 480px;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_label {
+    margin:  4rem auto 1rem auto;
+}
+
+.login_form_main {
+    width: 75%;
+}
+
+.login_input > input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.4rem;
+    background-color: #dedede;
+    border-radius: 4px;
+    padding: 2rem 6px 6px 6px;
+}
+.placeholder {
+    transform: translate(10%,-180%);
+    line-height: 1.6rem;
+    font-weight: 500;
+}
+
+
