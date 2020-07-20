@@ -39,10 +39,20 @@
             <div class="login_sign_up">
                 <span>CREATE ACCOUNT</span>
             </div>
+            <div class="login_with_social">
+                <div class="login_with_social_fb">
+                    <i class="fab fa-facebook"></i>
+                    <span class="login_with_social_fb_text">Facebook</span>
+                </div>
+                <div class="login_with_social_gp">
+                    <i class="fab fa-google-plus"></i>
+                    <span class="login_with_social_gp_text">Google</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Gameplay page -->
+    <!-- Game page -->
     <div id="game">
         <div id="game_navbar">
             <div class="game_brand">
@@ -50,8 +60,11 @@
                 <span class="game_brand_label">S-Quizz</span>
             </div>
             <div class="navbar_search">
-                <input type="search" name="" id="">
+                <input type="search" name="" id="" placeholder="Enter the subject">
                 <button type="submit">Search</button>
+                <div class="navbar_search_result">
+                    
+                </div>
             </div>
             <div class="navbar_home">
                 <span><i class="fas fa-home"></i></span>
@@ -81,6 +94,15 @@
                     <span>User status</span>
                 </div>
             </div>
+
+            <div class="quizz_subject row">
+                <div class="quizz_subject_item">Math</div>
+                <div class="quizz_subject_item">English</div>
+                <div class="quizz_subject_item">Social</div>
+                <div class="quizz_subject_item">Physic</div>
+                <div class="quizz_subject_item">Computer and Infomation Technology</div>
+            </div>
+
             <div class="quizz_introdution container">
                 <span class="quizz_introdution_title">
                     INTRODUCTION
@@ -99,6 +121,37 @@
             <!-- Hidden -->
         </div>
     </div>
+    <div id="game_play">
+        <div class="game_play_timer">
+
+        </div>
+        <div class="game_play_settings">
+            <div class="game_play_settings_sound">
+                SOUND
+            </div>
+            <div class="game_play_settings_score">
+                SCORE
+            </div>
+            <div class="game_play_settings_timer">
+                TIMER
+            </div>
+        </div>
+        <div class="game_play_content">
+            <div class="quizz_question">
+                Question
+            </div>
+            <div class="quizz_answer">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+            </div>
+        </div>
+        <div class="game_play_hint">
+
+        </div>
+    </div>
+    <script src="./js/database.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

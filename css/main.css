@@ -5,7 +5,6 @@
 
 body {
     width: 100%;
-    
     margin: 0;
 }
 
@@ -14,8 +13,8 @@ body {
 }
 
 #game {
-    display: none;
-    background-color: #676767;
+    display: block;
+    background-color: #dfdfdf;
 }
 
 #game_navbar {
@@ -34,6 +33,12 @@ body {
 
 .navbar_search {
     flex-grow: 3;
+    position: relative;
+}
+
+.navbar_search_result {
+    background-color: crimson;
+
 }
 
 .navbar_home {
@@ -78,6 +83,19 @@ body {
     margin-left: 2rem;
 }
 
+.quizz_subject {
+    width: 100%;
+    height: 10rem;
+    background-color: white;
+}
+
+.quizz_subject_item {
+    background-color: yellow;
+    width: 80%;
+    height: 100%;
+    margin: 0 1rem;
+}
+
 .quizz_introdution {
     width: 100%;
     height: 20rem;
@@ -96,6 +114,7 @@ body {
 /* LOGIN CSS */
 
 #login {
+    display: none;
     width: 100%;
     height: 100vh;
     font-family: 'Ubuntu', sans-serif;
@@ -113,6 +132,8 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    border-radius: 3px;
+    box-shadow: 1px;
 }
 
 .login_label {
@@ -198,4 +219,106 @@ body {
 .login_forget_pwd:hover {
     color: #525252;
     cursor: pointer;
+}
+
+.login_with_social {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.login_with_social div {
+    margin: 0 1rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    background-color: var(--disable_color);
+}
+
+.login_with_social div i {
+    padding: 0 0.6rem;
+}
+.login_with_social div span {
+    color: #656363;
+    padding: 0 0.6rem;
+}
+
+.login_with_social_fb:hover {
+    background-color: #385898;
+}
+
+.login_with_social_fb:hover .fa-facebook {
+    color: white;
+}   
+.login_with_social_fb:hover .login_with_social_fb_text{
+    color: white;
+}  
+
+.fa-facebook {
+    color: #385898;
+}
+
+.fa-google-plus {
+    color: rgb(238, 77, 45);
+}
+
+.login_with_social_gp:hover {
+    background-color: rgb(238, 77, 45);
+}
+
+.login_with_social_gp:hover .fa-google-plus {
+    color: white;
+}   
+.login_with_social_gp:hover .login_with_social_gp_text{
+    color: white;
+}  
+
+#game_play {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.game_play_settings {
+    flex-grow: 1;
+    background-color: red;
+}
+
+.game_play_content {
+    flex-grow: 7.4;
+    
+}
+
+.quizz_question {
+    height: 50%;
+    background-color: chocolate;
+}
+
+.quizz_answer {
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+}
+
+.quizz_answer span {
+    flex-grow: 1;
+    margin: 0 2rem;
+    height: 80%;
+    background-color: white;
+}
+
+.game_play_hint {
+    flex-grow: 1.5;
+    background-color: blue;
+}
+
+.game_play_timer {
+    flex-grow: 0.1;
+    background-color: chartreuse;
 }
