@@ -1,4 +1,4 @@
-let newUser = document.querySelector('.login_sign_up > span');
+const newUser = document.querySelector('.login_sign_up > span');
 
 function checkUser(userName) {
     for(let user of userData) {
@@ -11,9 +11,9 @@ function checkUser(userName) {
 }
 /* Chưa xong */
 function addUser() {
-    let userName = document.querySelector('.login_acc > input');
-    let password = document.querySelector('.login_pwd > input');
-    let subBtn = document.querySelector('.login_button');
+    const userName = document.querySelector('.login_acc > input');
+    const password = document.querySelector('.login_pwd > input');
+    const subBtn = document.querySelector('.login_button');
     subBtn.addEventListener('click', () => {
         while(checkUser(userName) === true) {
             checkUser(userName);
@@ -35,7 +35,7 @@ newUser.addEventListener('click', () => {
 
 /* Game play */
 /* Choose Subject from Game Home */
-let basicQuizz = document.getElementsByClassName('quizz_subject_item');
+const basicQuizz = document.getElementsByClassName('quizz_subject_item');
 let subjectChosen = null;
 function chooseSubject() {
     for(let i = 0; i < basicQuizz.length; i++) {
@@ -62,7 +62,7 @@ function createQuizzPack(subject, numberOfQuizzes) {
 /* Find Subject in quizzData */
 function findSubject(subjectName) {
     return quizzData.find((subject) => {
-            return subject.name == subjectName;
+            return subject.name.toLowerCase() == subjectName.toLowerCase();
     })
 }
 
@@ -80,12 +80,18 @@ function shuffleArray(arr) {
     return arr;
 }
 
-/* Show quizz in game play */
-function showQuizz(quizz) {
-    let question = document.querySelector('.quizz_question');
-    let answers = document.querySelectorAll('.quizz_answer > span');
-    question.textContent = quizz.question;
+/* Start click */
+const startBtn = document.querySelector('.game_start');
+startBtn.addEventListener('click', () => {
+    document.querySelector('.modal_overlay').style.display = 'none';
+    startGame('Math', 10);
+})
 
+/* Show quizz in game play */
+const question = document.querySelector('.quizz_question');
+const answers = document.querySelectorAll('.quizz_answer > span');
+function showQuizz(quizz) {
+    question.textContent = quizz.question;
     let shuffleAnswers = shuffleArray(quizz.answer);
     for(let i = 0; i < 4; i++) {
         answers[i].textContent = shuffleAnswers[i];
@@ -93,4 +99,39 @@ function showQuizz(quizz) {
 }
 
 
+/* Game timer */
+function startTimer(time) {
+    let freeSpace = 100/(time/0.01);
+    let sumSpace = freeSpace;
+    let runTimer = setInterval(() => {
+        document.querySelector('.game_timer').style.width = `${100-freeSpace}%`;
+        
+        freeSpace += sumSpace;
+    }, 10);
+    if(freeSpace > 100) {
+        clearInterval(runTimer);
+    }
+}
+    
+/* Main */
+function startGame(subject, time) {
+    let mainSubject = findSubject(subject);
+    for(let quizz of createQuizzPack(subject, 10)) {
+        showQuizz(quizz);
+        startTimer(time);
+        console.log(chooseAnswer(mainSubject.answer, mainSubject.trueAnswer))
+        
+    }
+}
 
+function chooseAnswer(answers, trueAns) {
+    for(let i = 0; i < 4; i++) {
+        answers[i].addEventListener('click', () => {
+            if(answers[i] === trueAns) {
+                console.log(true);
+            } else {
+                console.log(false);
+            }
+        })
+    }
+}   
